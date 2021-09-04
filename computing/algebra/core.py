@@ -9,6 +9,7 @@ Median = average of middle two numbers
 Example: numbers = [3,2,5,4,1,0]
 m = median(numbers)
 print(m)
+Output: 2.5
 """
 
 class averages():
