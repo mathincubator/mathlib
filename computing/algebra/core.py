@@ -43,14 +43,3 @@ class averages():
     """Mode"""
     def mode(num_list):
         pass
-
-
-numbers = [3,2,5,4,1,0]
-median_value = averages.median(numbers)
-mean_value = averages.mean(numbers)
-#mode_value = averages.mode(numbers)
-
-print("Median is", median_value)
-print("Mean is", mean_value)
-#print(mode_value)
-
