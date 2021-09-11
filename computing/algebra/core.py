@@ -12,6 +12,9 @@ print(m)
 Output: 2.5
 """
 
+from typing import Sequence
+
+
 class averages():
     def median(num_list):
         # Sort the list in ascending order.
@@ -43,3 +46,19 @@ class averages():
     """Mode"""
     def mode(num_list):
         pass
+
+
+class arithemtic:
+    def __init__(self, start, stop, step):
+        self.start = start
+        self.step = step
+        self.stop = stop
+        self.array = range(self.start,self.stop, self.step )
+
+    def sequence(self):
+        return self.array
+x=arithemtic(4, 19, 2)
+a=x.sequence()
+print(a)
+for c in a:
+    print(c)
