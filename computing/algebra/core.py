@@ -11,10 +11,6 @@ m = median(numbers)
 print(m)
 Output: 2.5
 """
-
-from typing import Sequence
-
-
 class averages():
     def median(num_list):
         # Sort the list in ascending order.
@@ -47,7 +43,23 @@ class averages():
     def mode(num_list):
         pass
 
+"""
+Author:Andrew
+Arithemetic: An arithmetic sequence is a sequence of numbers
+with the same difference between consecutive terms.
+Parameters:
+    Start: Where the interval starts (default is 0)
+    Stop: Where the interval ends
+    Step: how much it increaces every step
+Example: 
+x=arithemtic(4, 11, 2)
+a=x.sequence()
+print(a)
+for c in a:
+    print(c)
 
+output:4, 6, 8, 10
+"""
 class arithemtic:
     def __init__(self, start, stop, step):
         self.start = start
@@ -57,8 +69,3 @@ class arithemtic:
 
     def sequence(self):
         return self.array
-x=arithemtic(4, 19, 2)
-a=x.sequence()
-print(a)
-for c in a:
-    print(c)
