@@ -1,17 +1,17 @@
-"""
-Author: carole luo
-Median:
-After arranging the numbers in increasing or decreasing order:
-- If number of terms is odd,
-Median = middle number
-- If number of terms is even,
-Median = average of middle two numbers
-Example: numbers = [3,2,5,4,1,0]
-m = median(numbers)
-print(m)
-Output: 2.5
-"""
 class averages():
+    """
+    Author: carole luo
+    Median:
+    After arranging the numbers in increasing or decreasing order:
+    - If number of terms is odd,
+    Median = middle number
+    - If number of terms is even,
+    Median = average of middle two numbers
+    Example: numbers = [3,2,5,4,1,0]
+    m = median(numbers)
+    print(m)
+    Output: 2.5
+    """
     def median(self, num_list):
         # Sort the list in ascending order.
         num_list.sort()
@@ -29,7 +29,9 @@ class averages():
             return median
 
     """
-    Mean/Average
+    Author: carole luo
+    Mean/Average:
+    Mean = average of all terms = sum of all terms/number of terms
     """
     def mean(self, num_list):
         num_of_numbers = len(num_list)
@@ -39,11 +41,15 @@ class averages():
         mean = sum / num_of_numbers
         return mean
 
-    """Mode"""
+    """
+    Mode:
+    Most common term(s)
+    """
     def mode(self, num_list):
         pass
 
     """
+    Author: carole luo
     Hamonic Mean:
     In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
     Typically, it is appropriate for situations when the average rate is desired. 
