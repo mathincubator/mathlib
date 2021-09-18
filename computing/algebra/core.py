@@ -83,13 +83,12 @@ class arithemtic:
         return average
 
 
-x=arithemtic(40, 11, 2)
+'''x=arithemtic(4, 11, 2)
 a=x.sequence()
 print(a)
 for c in a:
     print(c)
 
 
-
 print(x.num_terms())
-print(x.average())
+print(x.average())'''
