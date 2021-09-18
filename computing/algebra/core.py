@@ -1,3 +1,5 @@
+from collections import Counter
+
 class averages():
     """
     Author: carole luo
@@ -42,12 +44,25 @@ class averages():
         return mean
 
     """
-    Mode:
-    Most common term(s)
+    Mode:Most common term(s) in a data set.
+    Author:Frankie Cui
     """
     def mode(self, num_list):
-        pass
-
+        n_num = [1, 2, 3, 4, 5, 5]
+        n = len(n_num)
+  
+        data = Counter(n_num)
+        get_mode = dict(data)
+        mode = [k for k, v in get_mode.items() if v == max(list(data.values()))]
+  
+        if len(mode) == n:
+            get_mode = "Mode is not applicable."
+        else:
+            get_mode = "Mode is" + ', '.join(map(str, mode))
+      
+        print(get_mode)
+        
+        
     """
     Author: carole luo
     Hamonic Mean:
