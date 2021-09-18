@@ -27,7 +27,7 @@ class averages():
             idx = num_of_numbers//2
             median = num_list[idx]
             return median
-
+ 
     """
     Mean/Average
     """
@@ -59,6 +59,7 @@ for c in a:
     print(c)
 
 output:4, 6, 8, 10
+
 """
 class arithemtic:
     def __init__(self, start, stop, step):
@@ -69,3 +70,26 @@ class arithemtic:
 
     def sequence(self):
         return self.array
+        
+    def num_terms(self):
+        return(len(self.array))
+        
+    def average(self):
+        numofnums = len(self.array)
+        sum = 0
+        for num in self.array:
+            sum += num
+        average = sum / numofnums
+        return average
+
+
+x=arithemtic(40, 11, 2)
+a=x.sequence()
+print(a)
+for c in a:
+    print(c)
+
+
+
+print(x.num_terms())
+print(x.average())
