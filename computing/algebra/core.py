@@ -98,3 +98,30 @@ class arithemtic:
 
     def sequence(self):
         return self.array
+
+        """
+
+    """
+
+    def nth_term(self, n):
+        if n < len(self.array) * (-1) or n >= len(self.array):
+            return None
+        return(self.array[n])
+
+
+
+
+    def sum(self):
+        sum=0
+        for x in self.array:
+            sum += x
+        return sum
+
+    def length(self):
+        return  len(self.array)
+
+        
+x=arithemtic(15, 98, 3)
+print(x.sum())
+print(x.nth_term(2))
+print(x.length())
