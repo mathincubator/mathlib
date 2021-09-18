@@ -1,18 +1,18 @@
-"""
-Author: carole luo
-Median:
-After arranging the numbers in increasing or decreasing order:
-- If number of terms is odd,
-Median = middle number
-- If number of terms is even,
-Median = average of middle two numbers
-Example: numbers = [3,2,5,4,1,0]
-m = median(numbers)
-print(m)
-Output: 2.5
-"""
 class averages():
-    def median(num_list):
+    """
+    Author: carole luo
+    Median:
+    After arranging the numbers in increasing or decreasing order:
+    - If number of terms is odd,
+    Median = middle number
+    - If number of terms is even,
+    Median = average of middle two numbers
+    Example: numbers = [3,2,5,4,1,0]
+    m = median(numbers)
+    print(m)
+    Output: 2.5
+    """
+    def median(self, num_list):
         # Sort the list in ascending order.
         num_list.sort()
         # Check if the number of terms is odd or even.
@@ -29,9 +29,11 @@ class averages():
             return median
 
     """
-    Mean/Average
+    Author: carole luo
+    Mean/Average:
+    Mean = average of all terms = sum of all terms/number of terms
     """
-    def mean(num_list):
+    def mean(self, num_list):
         num_of_numbers = len(num_list)
         sum = 0
         for num in num_list:
@@ -39,9 +41,36 @@ class averages():
         mean = sum / num_of_numbers
         return mean
 
-    """Mode"""
-    def mode(num_list):
+    """
+    Mode:
+    Most common term(s)
+    """
+    def mode(self, num_list):
         pass
+
+    """
+    Author: carole luo
+    Hamonic Mean:
+    In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
+    Typically, it is appropriate for situations when the average rate is desired. 
+    Example: If we travel 10 km at 60 km/h, then another 10 km at 20 km/h, what is our average speed? 
+    The formula would be harmonic mean = 2/(1/60 + 1/20) = 30 km/h.
+    Code example:
+    x = averages()
+    lst = [1,2,4]
+    result = x.harmonic_mean(lst)
+    print (result)
+    Output: 1.7142857142857142
+    """
+    def harmonic_mean(self, num_list):
+        sum = 0
+        for i in num_list:
+            if not i == 0:
+                sum += 1/i
+        if not sum == 0:
+            return len(num_list)/sum
+        else:
+            return sum
 
 """
 Author:Andrew
