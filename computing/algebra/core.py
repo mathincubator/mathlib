@@ -102,7 +102,7 @@ class arithemtic:
 """
 Author:Gavin
 Quadratic: A quadratic function a*x^2 + b*x + c discriminant is b^2 - 4*a*c
-can be positive, zero, or negative, and this determines how many solutions there are to the given quadratic equation.
+It can be positive, zero, or negative, and this determines how many solutions there are to the given quadratic equation.
 .A positive discriminant indicates that the quadratic has two distinct real number solutions.
 .A discriminant of zero indicates that the quadratic has a repeated real number solution.(a.k.a one solution)
 .A negative discriminant indicates that neither of the solutions are real numbers.(a.k.a no real solutions)
