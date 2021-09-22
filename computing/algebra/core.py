@@ -122,7 +122,7 @@ class quadratic:
     """
     Return the discriminant of a quadratic function.
     """
-    def quadratic_discriminant(self):
+    def discriminant(self):
         discriminant = self.b^2 - 4*self.a*self.c
         return discriminant
 
