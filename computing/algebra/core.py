@@ -101,7 +101,7 @@ class arithemtic:
 
     """
     Author:Andrew
-    nth_term: The nth term is start term + n-1 term
+    nth_term: The nth term is start term + (n-1)step
     Example: 
     x=arithemtic(4, 14, 2)
     print(x.nth_term(2))
