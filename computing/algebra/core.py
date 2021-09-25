@@ -99,15 +99,33 @@ class arithemtic:
     def sequence(self):
         return self.array
 
-        """
-
     """
+    Author:Andrew
+    nth_term: The nth term is start term + n-1 term
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.nth_term(2))
+
+    output:8
+    This is because 8 is the second term in this sequence.
+    """
+
 
     def nth_term(self, n):
         if n < len(self.array) * (-1) or n >= len(self.array):
             return None
         return(self.array[n])
 
+    """
+    Author:Andrew
+    Sum: The sum is when you add all the numbers in the arithimetic sequence.
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.sum())
+
+    output:40
+    This is because all the digits add up to 40.
+    """
 
 
 
@@ -117,11 +135,5 @@ class arithemtic:
             sum += x
         return sum
 
-    def length(self):
-        return  len(self.array)
 
         
-x=arithemtic(15, 98, 3)
-print(x.sum())
-print(x.nth_term(2))
-print(x.length())
