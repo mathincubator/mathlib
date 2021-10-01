@@ -113,7 +113,7 @@ class arithemtic:
 
     def nth_term(self, n):
         if n < len(self.array) * (-1) or n >= len(self.array):
-            return None
+            raise Exception("Number is not in the index range")
         return(self.array[n])
 
     """
@@ -137,3 +137,5 @@ class arithemtic:
 
 
         
+x=arithemtic(4, 14, 2)
+print(x.nth_term(10))
