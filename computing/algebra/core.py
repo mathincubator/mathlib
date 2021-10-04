@@ -71,7 +71,6 @@ class arithemtic:
     def sequence(self):
         return self.array
         
-        
     '''Author:Bryan
     This will return the number of numbers in the sequence
     Example:
@@ -81,6 +80,7 @@ class arithemtic:
 
     def num_terms(self):
         return(len(self.array))
+
     '''Author:Bryan
     This will return the mean of the numbers in the sequence.
     Example:
@@ -89,7 +89,7 @@ class arithemtic:
     '''
     def average(self):
         if len(self.array) == 0:
-            raise Exception("Your numbers do not have a list")
+            raise Exception("Your list is empty")
  
         else:
             numofnums = len(self.array)
@@ -98,5 +98,3 @@ class arithemtic:
                 sum += num
             average = sum / numofnums
             return average
-x=arithemtic(12, 11, 2)
-print(x.average())
