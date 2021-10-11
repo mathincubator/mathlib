@@ -134,8 +134,6 @@ class arithemtic:
             average = sum / numofnums
             return average
 
-x=arithemtic(4, 11, 2)
-print(x.average())
     
 """
 Author:Gavin
