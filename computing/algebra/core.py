@@ -86,7 +86,6 @@ a=x.sequence()
 print(a)
 for c in a:
     print(c)
-
 output:4, 6, 8, 10
 """
 class arithemtic:
@@ -105,7 +104,6 @@ class arithemtic:
     Example: 
     x=arithemtic(4, 14, 2)
     print(x.nth_term(2))
-
     output:8
     This is because 8 is the second term in this sequence.
     """
@@ -121,7 +119,6 @@ class arithemtic:
     Example: 
     x=arithemtic(4, 14, 2)
     print(x.sum())
-
     output:40
     This is because all the digits add up to 40.
     """
