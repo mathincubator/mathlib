@@ -110,7 +110,6 @@ class arithemtic:
     This is because 8 is the second term in this sequence.
     """
 
-
     def nth_term(self, n):
         if n < len(self.array) * (-1) or n >= len(self.array):
             raise Exception("Number is not in the index range")
@@ -127,15 +126,8 @@ class arithemtic:
     This is because all the digits add up to 40.
     """
 
-
-
     def sum(self):
         sum=0
         for x in self.array:
             sum += x
         return sum
-
-
-        
-x=arithemtic(4, 14, 2)
-print(x.nth_term(10))
