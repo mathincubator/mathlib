@@ -86,7 +86,6 @@ a=x.sequence()
 print(a)
 for c in a:
     print(c)
-
 output:4, 6, 8, 10
 """
 class arithemtic:
@@ -98,6 +97,39 @@ class arithemtic:
 
     def sequence(self):
         return self.array
+<<<<<<< HEAD
+
+    """
+    Author:Andrew
+    nth_term: The nth term is start term + (n-1)step
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.nth_term(2))
+    output:8
+    This is because 8 is the second term in this sequence.
+    """
+
+    def nth_term(self, n):
+        if n < len(self.array) * (-1) or n >= len(self.array):
+            raise Exception("Number is not in the index range")
+        return(self.array[n])
+
+    """
+    Author:Andrew
+    Sum: The sum is when you add all the numbers in the arithimetic sequence.
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.sum())
+    output:40
+    This is because all the digits add up to 40.
+    """
+
+    def sum(self):
+        sum=0
+        for x in self.array:
+            sum += x
+        return sum
+=======
     
 """
 Author:Gavin
@@ -126,3 +158,4 @@ class quadratic:
         discriminant = pow(self.b,2) - 4*self.a*self.c
         return discriminant
 
+>>>>>>> origin/main
