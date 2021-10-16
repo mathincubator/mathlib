@@ -157,5 +157,41 @@ class quadratic:
     def discriminant(self):
         discriminant = pow(self.b,2) - 4*self.a*self.c
         return discriminant
+    
+"""
+Created on Sun Oct  3 20:13:10 2021
+Calculate the sum of n even numbers from 2 to 2n.
+2 + 4 + 6 + · · · + 2n = n(n + 1)
+@author: gavin
+"""
+class EvenNumberSeries:
+    """
+    n is the number of even elements.
+    
+    """
+    def __init__(self, n):
+        
+        self.n = n
+        
+    """
+    Calculate the sum of even numbers
+    Return the sum of even numbers from 2 to 2n.
+    """
+    def sumSeries(self):
+        acc = 0
+        item = 0
+        while ( item <= 2 * self.n ) :
+            acc = acc + item
+            item = item + 2
+        return acc 
+    
+    """
+    Use the formula to calculate the sum of the even number series.
+    """
+    def sumUsingFormula(self):
+        return self.n * ( self.n + 1 ) 
+        
+    
+    
 
 >>>>>>> origin/main
