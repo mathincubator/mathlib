@@ -70,7 +70,7 @@ class averages():
         if not sum == 0:
             return len(num_list)/sum
         else:
-            return sum
+            return sum        
 
 """
 Author:Andrew
@@ -163,18 +163,17 @@ class arithemtic_sequence:
         for x in self.array:
             sum += x
         return sum
-    
-"""
-Author:Gavin
-Quadratic: A quadratic function a*x^2 + b*x + c discriminant is b^2 - 4*a*c
-It can be positive, zero, or negative, and this determines how many solutions there are to the given quadratic equation.
-.A positive discriminant indicates that the quadratic has two distinct real number solutions.
-.A discriminant of zero indicates that the quadratic has a repeated real number solution.(a.k.a one solution)
-.A negative discriminant indicates that neither of the solutions are real numbers.(a.k.a no real solutions)
 
-"""
+
 class quadratic:
     """
+    Author:Gavin
+    Quadratic: A quadratic function a*x^2 + b*x + c discriminant is b^2 - 4*a*c
+    It can be positive, zero, or negative, and this determines how many solutions there are to the given quadratic equation.
+    .A positive discriminant indicates that the quadratic has two distinct real number solutions.
+    .A discriminant of zero indicates that the quadratic has a repeated real number solution.(a.k.a one solution)
+    .A negative discriminant indicates that neither of the solutions are real numbers.(a.k.a no real solutions)
+
     Parameters:
     a: The coefficient of the second degree
     b: The coefficient of the first degree
@@ -190,6 +189,29 @@ class quadratic:
     def discriminant(self):
         discriminant = pow(self.b,2) - 4*self.a*self.c
         return discriminant
+
+    """
+    Author: carole luo
+    Quadratic equation:
+    In algebra, the quadratic equation is an equation where x represents an unknown term, and a, b, and c represent known numbers,
+    and where a≠0.
+    If a=0, then the equation is linear, not quadratic, as there would be no ax^2 term. 
+    The numbers a, b, and c are coefficients of the equation and may be differentiated by calling them the quadratic coefficient,
+    the linear coefficient and the constant/free term.
+    Example:
+    x = quadratic()
+    y = x.roots(-2, 2, 3)
+    print(y)
+    Output:
+    (-0.8228756555322954, 1.8228756555322954)
+    """
+    def roots(self, a, b, c):
+        D = (b*b - 4*a*c)**0.5
+        self.root1 = (-b + D)/(2*a)
+        self.root2 = (-b - D)/(2*a) 
+        roots = (self.root1, self.root2)
+        return roots
+
     
 """
 Created on Sun Oct  3 20:13:10 2021
