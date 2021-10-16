@@ -81,14 +81,15 @@ Parameters:
     Stop: Where the interval ends
     Step: how much it increaces every step
 Example: 
-x=arithemtic(4, 11, 2)
+x=arithemtic_sequence(4, 11, 2)
 a=x.sequence()
 print(a)
 for c in a:
     print(c)
 output:4, 6, 8, 10
 """
-class arithemtic:
+
+class arithemtic_sequence:
     def __init__(self, start, stop, step):
         self.start = start
         self.step = step
@@ -97,7 +98,40 @@ class arithemtic:
 
     def sequence(self):
         return self.array
-<<<<<<< HEAD
+
+    """
+    Author:Bryan
+    This will return the number of numbers in the sequence
+    Example:
+    x=arithemtic(4, 11, 2)
+    print(x.num_terms())
+
+    output: 4
+
+    """
+
+    def num_terms(self):
+        return(len(self.array))
+
+    """
+    Author:Bryan
+    This will return the mean of the numbers in the sequence.
+    Example:
+    x=arithemtic(4, 11, 2)
+    print(x.average())
+    output: 7.0
+    """
+    def average(self):
+        if len(self.array) == 0:
+            raise Exception("Your list is empty")
+ 
+        else:
+            numofnums = len(self.array)
+            sum = 0
+            for num in self.array:
+                sum += num
+            average = sum / numofnums
+            return average
 
     """
     Author:Andrew
@@ -129,7 +163,6 @@ class arithemtic:
         for x in self.array:
             sum += x
         return sum
-=======
     
 """
 Author:Gavin
@@ -190,8 +223,3 @@ class EvenNumberSeries:
     """
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
-        
-    
-    
-
->>>>>>> origin/main
