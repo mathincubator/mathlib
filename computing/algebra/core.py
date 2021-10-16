@@ -81,16 +81,15 @@ Parameters:
     Stop: Where the interval ends
     Step: how much it increaces every step
 Example: 
-x=arithemtic(4, 11, 2)
+x=arithemtic_sequence(4, 11, 2)
 a=x.sequence()
 print(a)
 for c in a:
     print(c)
-
 output:4, 6, 8, 10
 """
 
-class arithemtic:
+class arithemtic_sequence:
     def __init__(self, start, stop, step):
         self.start = start
         self.step = step
@@ -134,6 +133,36 @@ class arithemtic:
             average = sum / numofnums
             return average
 
+    """
+    Author:Andrew
+    nth_term: The nth term is start term + (n-1)step
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.nth_term(2))
+    output:8
+    This is because 8 is the second term in this sequence.
+    """
+
+    def nth_term(self, n):
+        if n < len(self.array) * (-1) or n >= len(self.array):
+            raise Exception("Number is not in the index range")
+        return(self.array[n])
+
+    """
+    Author:Andrew
+    Sum: The sum is when you add all the numbers in the arithimetic sequence.
+    Example: 
+    x=arithemtic(4, 14, 2)
+    print(x.sum())
+    output:40
+    This is because all the digits add up to 40.
+    """
+
+    def sum(self):
+        sum=0
+        for x in self.array:
+            sum += x
+        return sum
     
 """
 Author:Gavin
@@ -161,4 +190,36 @@ class quadratic:
     def discriminant(self):
         discriminant = pow(self.b,2) - 4*self.a*self.c
         return discriminant
-
+    
+"""
+Created on Sun Oct  3 20:13:10 2021
+Calculate the sum of n even numbers from 2 to 2n.
+2 + 4 + 6 + · · · + 2n = n(n + 1)
+@author: gavin
+"""
+class EvenNumberSeries:
+    """
+    n is the number of even elements.
+    
+    """
+    def __init__(self, n):
+        
+        self.n = n
+        
+    """
+    Calculate the sum of even numbers
+    Return the sum of even numbers from 2 to 2n.
+    """
+    def sumSeries(self):
+        acc = 0
+        item = 0
+        while ( item <= 2 * self.n ) :
+            acc = acc + item
+            item = item + 2
+        return acc 
+    
+    """
+    Use the formula to calculate the sum of the even number series.
+    """
+    def sumUsingFormula(self):
+        return self.n * ( self.n + 1 ) 
