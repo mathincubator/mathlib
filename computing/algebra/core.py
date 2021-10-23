@@ -245,3 +245,51 @@ class EvenNumberSeries:
     """
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
+
+"""
+@auther: Fred Xu
+Calculates the sum of the first n odd numbers.
+1+3+5... (2n+1)=n²
+
+Example:
+if n = 5
+then we are calculating the sum of the first 5 odd numbers [1, 3, 5, 7, 9]
+
+Result:
+n² = 5² = 25
+Therefore the sum of the first 5 odd numbers is 25.
+"""
+class OddNumberSequence:
+    """ 
+    n is the number of numbers in the odd number sequence.
+    """ 
+    def __init__(self, n):
+
+        self.n = n
+    
+    """
+    Checks if the number given is valid.
+      - the number must be greater or equal to 0
+    """
+    def validat(self):
+        if self.n < 0:
+            raise Exception('The length of the sequence cannot be a negative number.')
+            
+    """
+    Calculates the sum without the formula.
+    """
+    def sumWithoutFormula(self):
+        OddNumberSequence.validat(self)
+        total = 0
+        for i in range(1, self.n+1):
+            total += i*2-1
+        return total
+    
+    """
+    Calculates the sum using the formula n²
+    """
+    def sumWithFormula(self):
+
+        OddNumberSequence.validat(self)
+        
+        return self.n ** 2
