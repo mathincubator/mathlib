@@ -245,3 +245,30 @@ class EvenNumberSeries:
     """
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
+
+"""
+@author: Shaoming
+Calculates the number of subsets of size n and the formula to find it is 2^n
+
+Example:
+if n = [1, 2, 3, 4, 5]
+then we the number of elements in the set, which in this case, is 5.
+Result:
+2^n = 2^5 = 32
+Therefore the amount of subsets of size n is 32.
+"""
+class Subsets:
+    """
+    n represents the number of elements in the set.
+    """
+    def __init__(self, n):
+        self.n = n
+    
+    def findSubsets(self):
+        amt = 1
+        for x in range(len(self.n)):
+            amt *= 2
+        return amt 
+    """
+    To find the amount of proper subsets, subtract 1 a = findSubsets([1, 2, 3])-1
+    """
