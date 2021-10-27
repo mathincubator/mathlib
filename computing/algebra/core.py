@@ -1,4 +1,4 @@
-from collections import Counter
+
 
 class averages():
     """
@@ -48,19 +48,13 @@ class averages():
     Author:Frankie Cui
     """
     def mode(self, num_list):
-        n_num = [1, 2, 3, 4, 5, 5]
-        n = len(n_num)
-  
-        data = Counter(n_num)
-        get_mode = dict(data)
-        mode = [k for k, v in get_mode.items() if v == max(list(data.values()))]
-  
-        if len(mode) == n:
-            get_mode = "Mode is not applicable."
-        else:
-            get_mode = "Mode is" + ', '.join(map(str, mode))
-      
-        print(get_mode)
+        num_of_numbers = len(num_list)
+        num = 1
+        for num in num_list:
+            num +- num_list
+        mode = num in num_list
+        return mode
+            
         
         
     """
