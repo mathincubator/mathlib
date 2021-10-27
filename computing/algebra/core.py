@@ -52,7 +52,7 @@ class averages():
         num = 1
         for num in num_list:
             num +- num_list
-        mode = num in num_list
+        mode = num_of_numbers in num_list
         return mode
             
         
