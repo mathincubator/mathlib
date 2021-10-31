@@ -46,7 +46,12 @@ class averages():
     """
     Mode:Most common term(s) in a data set.
     Author:Frankie Cui
-    test code:
+    Example:
+        Evaluate the set and find the mode:[1,2,3,4,5,6,7,8,9,1,1,1]
+        The mode is the element shown the most commonly in a set.
+        The mode in the set is 1; and is unimodal because there is only one mode.
+        
+    Code Example:
         def mode(num_list):
     num_dict = {} # Create empty dictionary
     num_set = set() # Create empty set
@@ -67,14 +72,14 @@ class averages():
             mode = key
             largest_value.clear()
             largest_value.append(num_dict[key])
-            print("Tis greater")
+            print("its greater")
             
         elif num_dict[key] == largest_value[0]:
             largest_value.append(num_dict[key])
             
     if len(largest_value) > 1:
         print("THERE IS NO MODE")
-        mode = "NO MODE HAHA L"
+        mode = "there is no mode"
         
         
     print("The mode is:", mode)
@@ -105,7 +110,7 @@ mode([1,2,1,2,3,3,3,3])
                 mode = key
                 largest_value.clear()
                 largest_value.append(num_dict[key])
-                print("Tis greater")
+                print("its greater")
                 
             elif num_dict[key] == largest_value[0]:
                 largest_value.append(num_dict[key])
