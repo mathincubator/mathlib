@@ -254,6 +254,10 @@ Example:
 if n = [1, 2, 3, 4, 5]
 then we the number of elements in the set, which in this case, is 5.
 Result:
+s = Subsets([1,2,3,4,5])
+a = s.findSubsets()
+print(a)
+Output: 32
 2^n = 2^5 = 32
 Therefore the amount of subsets of size n is 32.
 """
