@@ -52,46 +52,12 @@ class averages():
         The mode in the set is 1; and is unimodal because there is only one mode.
         
     Code Example:
-  def mode(num_list):
-    num_dict = {} # Create empty dictionary
-    num_set = set() # Create empty set
-    mode = 0
-    largest_value = [0]
-    
-    for num in num_list:
-        num_set.add(num)
-        occurences = 0
-        for x in num_list:
-            if x == num:
-                occurences += 1
-        num_dict[num] = occurences
-        
-    for key in num_dict:
-        print(key, ":", num_dict[key])
-        if num_dict[key] > largest_value[0]:
-            mode = key
-            largest_value.clear()
-            largest_value.append(num_dict[key])
-            print("its greater")
-            
-        elif num_dict[key] == largest_value[0]:
-            largest_value.append(num_dict[key])
-            
-    if len(largest_value) > 1:
-        print("THERE IS NO MODE")
-        mode = "there is no mode"
-        
-        
-    print("The mode is:", mode)
-    print(num_dict)
-    
-    return mode
-
-mode([1,2,1,2,3,3,3,3])
+ 
         
     """
 def mode(self,num_list):
         num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
+        self.mode
         num_set = set() # Empty set for numbers in num_list to avoide duplicates
         mode = [0] # List of modes (in case there is more than one mode)
         most_occurences = [0] # List of largest values (in case there is more than one mode)
@@ -118,7 +84,7 @@ def mode(self,num_list):
         if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
             mode = int(mode[0]) 
         
-        print("The mode is", mode)
+
         return mode
     
     
