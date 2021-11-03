@@ -45,14 +45,14 @@ class averages():
 
     """
     Mode:Most common term(s) in a data set.
-    Author:Frankie Cui
+    Author:frankie
     Example:
         Evaluate the set and find the mode:[1,2,3,4,5,6,7,8,9,1,1,1]
         The mode is the element shown the most commonly in a set.
         The mode in the set is 1; and is unimodal because there is only one mode.
         
     Code Example:
-        def mode(num_list):
+  def mode(num_list):
     num_dict = {} # Create empty dictionary
     num_set = set() # Create empty set
     mode = 0
@@ -90,39 +90,43 @@ class averages():
 mode([1,2,1,2,3,3,3,3])
         
     """
-    def mode(num_list):
-        num_dict = {} # Create empty dictionary
-        num_set = set() # Create empty set
-        mode = 0
-        largest_value = [0]
-        
+def mode(self,num_list):
+        num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
+        num_set = set() # Empty set for numbers in num_list to avoide duplicates
+        mode = [0] # List of modes (in case there is more than one mode)
+        most_occurences = [0] # List of largest values (in case there is more than one mode)
         for num in num_list:
-            num_set.add(num)
-            occurences = 0
-            for x in num_list:
-                if x == num:
+            num_set.add(num) # Add each number in num_list to the set
+            occurences = 0 # Set the occurences to 0 inside the loop so it reset every to count for each number
+            for x in num_list: # Loop over the num_list again to check occurences
+                if x == num: 
                     occurences += 1
-            num_dict[num] = occurences
+            num_dict[num] = occurences # Add the number and its occurences to the dictionary
             
         for key in num_dict:
             print(key, ":", num_dict[key])
-            if num_dict[key] > largest_value[0]:
-                mode = key
-                largest_value.clear()
-                largest_value.append(num_dict[key])
-                print("its greater")
-                
-            elif num_dict[key] == largest_value[0]:
-                largest_value.append(num_dict[key])
-                
-        if len(largest_value) > 1:
-            mode = "NO MODE"
+            if num_dict[key] > most_occurences[0]: # Check if the number is greater than the current largest value
+                mode.clear() # Clear the mode list if a new largest number is found
+                mode.append(key) # Add the new largest number to the list
+                most_occurences.clear() # Clear the most_occurences list if there is a new largest value
+                most_occurences.append(num_dict[key]) # Add the new largest value
             
+            elif num_dict[key] == most_occurences[0]: # Check if the number of occurences is equal than the current highest
+                most_occurences.append(num_dict[key]) # If they are the same then add the number of occurences to the list with the other value
+                mode.append(key) # Add the number to the list of modes, since it is tied with at least one other number
+        
+        if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
+            mode = int(mode[0]) 
+        
+        print("The mode is", mode)
         return mode
+    
+    
+
             
         
              
-    """
+"""
     Author: carole luo
     Hamonic Mean:
     In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
@@ -136,7 +140,7 @@ mode([1,2,1,2,3,3,3,3])
     print (result)
     Output: 1.7142857142857142
     """
-    def harmonic_mean(self, num_list):
+def harmonic_mean(self, num_list):
         sum = 0
         for i in num_list:
             if not i == 0:
