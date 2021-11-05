@@ -56,7 +56,7 @@ print(x)
     
 
     """
-def mode(num_list):
+def mode(self,num_list):
         num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
         num_set = set() # Empty set for numbers in num_list to avoide duplicates
         mode = [0] # List of modes (in case there is more than one mode)
