@@ -45,65 +45,66 @@ class averages():
     Mode:
     Author:Frankie
     Most common term(s)
-x = mode([1,1,1,2,3,4,5,6])
-print(x)
-    
+    x = mode([1,1,1,2,3,4,5,6])
+    print(x)
+        
 
     """
-def mode(num_list):
-        num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
-        num_set = set() # Empty set for numbers in num_list to avoide duplicates
-        mode = [0] # List of modes (in case there is more than one mode)
-        most_occurences = [0] # List of largest values (in case there is more than one mode)
-        for num in num_list:
-            num_set.add(num) # Add each number in num_list to the set
-            occurences = 0 # Set the occurences to 0 inside the loop so it reset every to count for each number
-            for x in num_list: # Loop over the num_list again to check occurences
-                if x == num: 
-                    occurences += 1
-            num_dict[num] = occurences # Add the number and its occurences to the dictionary
+    def mode(self, num_list):
+            num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
+            num_set = set() # Empty set for numbers in num_list to avoide duplicates
+            mode = [0] # List of modes (in case there is more than one mode)
+            most_occurences = [0] # List of largest values (in case there is more than one mode)
             
-        for key in num_dict:
-            if num_dict[key] > most_occurences[0]: # Check if the number is greater than the current largest value
-                mode.clear() # Clear the mode list if a new largest number is found
-                mode.append(key) # Add the new largest number to the list
-                most_occurences.clear() # Clear the most_occurences list if there is a new largest value
-                most_occurences.append(num_dict[key]) # Add the new largest value
+            for num in num_list:
+                num_set.add(num) # Add each number in num_list to the set
+                occurences = 0 # Set the occurences to 0 inside the loop so it reset every to count for each number
+                for x in num_list: # Loop over the num_list again to check occurences
+                    if x == num: 
+                        occurences += 1
+                num_dict[num] = occurences # Add the number and its occurences to the dictionary
+                
+            for key in num_set:
+                if num_dict[key] > most_occurences[0]: # Check if the number is greater than the current largest value
+                    mode.clear() # Clear the mode list if a new largest number is found
+                    mode.append(key) # Add the new largest number to the list
+                    most_occurences.clear() # Clear the most_occurences list if there is a new largest value
+                    most_occurences.append(num_dict[key]) # Add the new largest value
+                
+                elif num_dict[key] == most_occurences[0]: # Check if the number of occurences is equal than the current highest
+                    most_occurences.append(num_dict[key]) # If they are the same then add the number of occurences to the list with the other value
+                    mode.append(key) # Add the number to the list of modes, since it is tied with at least one other number
             
-            elif num_dict[key] == most_occurences[0]: # Check if the number of occurences is equal than the current highest
-                most_occurences.append(num_dict[key]) # If they are the same then add the number of occurences to the list with the other value
-                mode.append(key) # Add the number to the list of modes, since it is tied with at least one other number
-        
-        if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
-            mode = int(mode[0]) 
-        
-        return mode
+            if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
+                mode = int(mode[0]) 
+            
+            return mode
     
 
 
-"""
-    Author: carole luo
-    Hamonic Mean:
-    In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
-    Typically, it is appropriate for situations when the average rate is desired. 
-    Example: If we travel 10 km at 60 km/h, then another 10 km at 20 km/h, what is our average speed? 
-    The formula would be harmonic mean = 2/(1/60 + 1/20) = 30 km/h.
-    Code example:
-    x = averages()
-    lst = [1,2,4]
-    result = x.harmonic_mean(lst)
-    print (result)
-    Output: 1.7142857142857142
     """
-def harmonic_mean(self, num_list):
-        sum = 0
-        for i in num_list:
-            if not i == 0:
-                sum += 1/i
-        if not sum == 0:
-            return len(num_list)/sum
-        else:
-            return sum        
+        Author: carole luo
+        Hamonic Mean:
+        In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
+        Typically, it is appropriate for situations when the average rate is desired. 
+        Example: If we travel 10 km at 60 km/h, then another 10 km at 20 km/h, what is our average speed? 
+        The formula would be harmonic mean = 2/(1/60 + 1/20) = 30 km/h.
+        Code example:
+        x = averages()
+        lst = [1,2,4]
+        result = x.harmonic_mean(lst)
+        print (result)
+        Output: 1.7142857142857142
+        """
+    def harmonic_mean(self, num_list):
+            sum = 0
+            for i in num_list:
+                if not i == 0:
+                    sum += 1/i
+            if not sum == 0:
+                return len(num_list)/sum
+            else:
+                return sum        
 
 """
 Author:Andrew
@@ -356,4 +357,5 @@ class OddNumberSequence:
         OddNumberSequence.validat(self)
         
         return self.n ** 2
+
 
