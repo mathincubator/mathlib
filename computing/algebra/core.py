@@ -43,11 +43,50 @@ class averages():
 
     """
     Mode:
+    Author:Frankie
     Most common term(s)
+    Mode: Most common elements in set.
+    Example:
+    Find the mode in the set below:
+    [1,1,1,1,2,3,4]
+    The mode is 1.
+    Exmaple code:
+    x = averages()
+    y = x.mode([1,1,1,2,3,4,5,6])
+    print(y)
+    output：1
+
     """
     def mode(self, num_list):
-        pass
-
+            num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
+            num_set = set() # Empty set for numbers in num_list to avoide duplicates
+            mode = [0] # List of modes (in case there is more than one mode)
+            most_occurences = [0] # List of largest values (in case there is more than one mode)
+            
+            for num in num_list:
+                num_set.add(num) # Add each number in num_list to the set
+                occurences = 0 # Set the occurences to 0 inside the loop so it reset every to count for each number
+                for x in num_list: # Loop over the num_list again to check occurences
+                    if x == num: 
+                        occurences += 1
+                num_dict[num] = occurences # Add the number and its occurences to the dictionary
+                
+            for key in num_set:
+                if num_dict[key] > most_occurences[0]: # Check if the number is greater than the current largest value
+                    mode.clear() # Clear the mode list if a new largest number is found
+                    mode.append(key) # Add the new largest number to the list
+                    most_occurences.clear() # Clear the most_occurences list if there is a new largest value
+                    most_occurences.append(num_dict[key]) # Add the new largest value
+                
+                elif num_dict[key] == most_occurences[0]: # Check if the number of occurences is equal than the current highest
+                    most_occurences.append(num_dict[key]) # If they are the same then add the number of occurences to the list with the other value
+                    mode.append(key) # Add the number to the list of modes, since it is tied with at least one other number
+            
+            if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
+                mode = int(mode[0]) 
+            
+            return mode
+    
     """
     Author: carole luo
     Hamonic Mean:
@@ -323,4 +362,5 @@ class OddNumberSequence:
         OddNumberSequence.validat(self)
         
         return self.n ** 2
+
 
