@@ -45,15 +45,16 @@ class averages():
     Mode:
     Author:Frankie
     Most common term(s)
-   Mode: Most common elements in set.
-   Example:
-   Find the mode in the set below:
-   [1,1,1,1,2,3,4]
-   The mode is 1.
-Exmaple code:
-x = mode([1,1,1,2,3,4,5,6])
-print(x)
-output：1
+    Mode: Most common elements in set.
+    Example:
+    Find the mode in the set below:
+    [1,1,1,1,2,3,4]
+    The mode is 1.
+    Exmaple code:
+    x = averages()
+    y = x.mode([1,1,1,2,3,4,5,6])
+    print(y)
+    output：1
     
 
     """
