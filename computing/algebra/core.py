@@ -45,9 +45,16 @@ class averages():
     Mode:
     Author:Frankie
     Most common term(s)
-    x = mode([1,1,1,2,3,4,5,6])
-    print(x)
-        
+    Mode: Most common elements in set.
+    Example:
+    Find the mode in the set below:
+    [1,1,1,1,2,3,4]
+    The mode is 1.
+    Exmaple code:
+    x = averages()
+    y = x.mode([1,1,1,2,3,4,5,6])
+    print(y)
+    output：1
 
     """
     def mode(self, num_list):
@@ -82,6 +89,7 @@ class averages():
     
 
 
+<<<<<<< HEAD
     """
         Author: carole luo
         Hamonic Mean:
@@ -105,6 +113,31 @@ class averages():
                 return len(num_list)/sum
             else:
                 return sum        
+=======
+"""
+    Author: carole luo
+    Hamonic Mean:
+    In mathematics, the harmonic mean is one of several kinds of average, and in particular, is one of the three Pythagorean means. 
+    Typically, it is appropriate for situations when the average rate is desired. 
+    Example: If we travel 10 km at 60 km/h, then another 10 km at 20 km/h, what is our average speed? 
+    The formula would be harmonic mean = 2/(1/60 + 1/20) = 30 km/h.
+    Code example:
+    x = averages()
+    lst = [1,2,4]
+    result = x.harmonic_mean(lst)
+    print (result)
+    Output: 1.7142857142857142
+    """
+    def harmonic_mean(self, num_list):
+        sum = 0
+        for i in num_list:
+            if not i == 0:
+                sum += 1/i
+        if not sum == 0:
+            return len(num_list)/sum
+        else:
+            return sum        
+>>>>>>> 13863ce27756e1080a50f252ca62bb403eec6782
 
 """
 Author:Andrew
