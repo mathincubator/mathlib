@@ -103,7 +103,7 @@ output：1
     print (result)
     Output: 1.7142857142857142
     """
-def harmonic_mean(self, num_list):
+    def harmonic_mean(self, num_list):
         sum = 0
         for i in num_list:
             if not i == 0:
