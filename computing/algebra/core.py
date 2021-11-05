@@ -55,8 +55,6 @@ class averages():
     y = x.mode([1,1,1,2,3,4,5,6])
     print(y)
     output：1
-    
-
     """
     def mode(self, num_list):
             num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
