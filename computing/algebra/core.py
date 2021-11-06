@@ -1,3 +1,80 @@
+from fractions import Fraction
+
+class polynomial():
+    def polynomial_calculation(self, co_list, x):
+        degree = len(co_list) - 1
+        po = 0
+
+        for co in co_list:
+            po += co * x**degree
+            degree -= 1
+
+        print("po is", po)
+        if po == 0:
+            print("x is", x)
+
+        return po
+
+    def rational_roots(self, co_list):
+        '''
+        P is an i factor of the constant term a0
+        Q is an i factor of the leading coefficient aN
+        '''
+
+        if len(co_list) == 0:
+            raise Exception("Coefficient can not be empty.")
+
+        aN = co_list[0]
+        a0 = co_list[-1]
+        aN_factors = []
+        a0_factors = []
+        possible_solutions = []
+        solutions = []
+        nums = []
+
+        if a0 == 0 or aN == 0:
+            raise Exception("Leading coefficient and/or the constant term can not be zero.")
+
+        for i in range(1, abs(aN) + 1):
+            #print(i)
+            if aN % i == 0:
+                aN_factors.append(-i)
+                aN_factors.append(i)
+        
+        for i in range(1, abs(a0) + 1):
+            print(i)
+            if i == 0:
+                continue
+            if a0 % i == 0:
+                a0_factors.append(-i)
+                a0_factors.append(i)
+        
+        print(a0_factors)
+
+        for num1 in a0_factors:
+            for num2 in aN_factors:
+                possible_solutions.append(Fraction(num1, num2))
+
+        #print("Leading coefficient factors are:", aN_factors)
+        #print("Constant term factors are:", a0_factors)
+        print(possible_solutions)
+        possible_solution_set = set(possible_solutions)
+        for i in possible_solution_set:
+            s = self.polynomial_calculation(co_list, i)
+            if s == 0:
+                solutions.append(float(i))
+
+        for i in solutions:
+            print("i is", i)
+
+        return solutions
+
+#print(rational_roots([1,2,-7,-8,12]))
+x = polynomial()
+print(x.rational_roots([2,-2,1,-5]))
+
+
+
 class averages():
     """
     Author: carole luo
