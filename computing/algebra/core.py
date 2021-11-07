@@ -21,8 +21,8 @@ class polynomial():
     Author: Kyler Luo
     The rational root theorem uses the leading coefficient and the constant term
     of a polynomial to determine its rational roots (zeros).
-    P is an i factor of the constant term a0.
-    Q is an i factor of the leading coefficient aN.
+    P is an integer factor of the constant term a0.
+    Q is an integer factor of the leading coefficient aN.
 
     Example: 
     2x**2 - 5x - 3
