@@ -20,12 +20,12 @@ class polynomial():
     '''
     Author: Kyler Luo
     The rational root theorem uses the leading coefficient and the constant term
-    of a polynomial to determine its roots (zeros).
+    of a polynomial to determine its real roots (zeros).
     P is an i factor of the constant term a0.
     Q is an i factor of the leading coefficient aN.
 
     Example: 
-    2x**3 - 2x**2 + x + 5
+    2x**2 - 5x - 3
     x = polynomial()
     roots = x.rational_roots([2,-5,-3])
     print(roots)
@@ -82,6 +82,10 @@ class polynomial():
             solutions = float(solutions[0]) 
 
         return solutions
+
+x = polynomial()
+roots = x.rational_roots([2,-5,-3])
+print(roots)
 
 class averages():
     """
