@@ -77,10 +77,6 @@ class polynomial():
             if s == 0:
                 solutions.append(float(i))
 
-        # Convert the list of solutions to return a single value if the length of the list is one.
-        if len(solutions) == 1:
-            solutions = float(solutions[0]) 
-
         return solutions
 
 class averages():
