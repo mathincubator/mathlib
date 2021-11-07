@@ -83,10 +83,6 @@ class polynomial():
 
         return solutions
 
-x = polynomial()
-roots = x.rational_roots([2,-5,-3])
-print(roots)
-
 class averages():
     """
     Author: carole luo
