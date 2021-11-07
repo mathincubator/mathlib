@@ -80,12 +80,6 @@ class polynomial():
 
         return solutions
 
-#print(rational_roots([1,2,-7,-8,12]))
-x = polynomial()
-print(x.rational_roots([2,-5,-3]))
-
-
-
 class averages():
     """
     Author: carole luo
