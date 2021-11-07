@@ -4,7 +4,7 @@ class polynomial():
     '''
     Author: Kyler Luo
     '''
-    def polynomial_calculation(self, co_list, x):
+    def __polynomial_calculation(self, co_list, x):
         # Degree is one less than the length of the co_list, because of the constant term.
         degree = len(co_list) - 1
         # A possible solution.
@@ -12,7 +12,7 @@ class polynomial():
 
         # Assemble the polynomial.
         for co in co_list:
-            result += co * x**degree
+            result += co * x ** degree
             degree -= 1
 
         return result
@@ -72,7 +72,7 @@ class polynomial():
 
         # Test the possible solution with the polynomial_calculation function.
         for i in possible_solution_set:
-            s = self.polynomial_calculation(co_list, i)
+            s = self.__polynomial_calculation(co_list, i)
             # If the result is a zero (root), then add it to the solutions list.
             if s == 0:
                 solutions.append(float(i))
