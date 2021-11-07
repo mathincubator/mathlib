@@ -1,6 +1,9 @@
 from fractions import Fraction
 
 class polynomial():
+    '''
+    Author: Kyler Luo
+    '''
     def polynomial_calculation(self, co_list, x):
         # Degree is one less than the length of the co_list, because of the constant term.
         degree = len(co_list) - 1
