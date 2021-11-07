@@ -1,3 +1,88 @@
+from fractions import Fraction
+
+class polynomial():
+    '''
+    Author: Kyler Luo
+    '''
+    def polynomial_calculation(self, co_list, x):
+        # Degree is one less than the length of the co_list, because of the constant term.
+        degree = len(co_list) - 1
+        # A possible solution.
+        result = 0
+
+        # Assemble the polynomial.
+        for co in co_list:
+            result += co * x**degree
+            degree -= 1
+
+        return result
+    
+    '''
+    Author: Kyler Luo
+    The rational root theorem uses the leading coefficient and the constant term
+    of a polynomial to determine its rational roots (zeros).
+    P is an integer factor of the constant term a0.
+    Q is an integer factor of the leading coefficient aN.
+
+    Example: 
+    2x**2 - 5x - 3
+    x = polynomial()
+    roots = x.rational_roots([2,-5,-3])
+    print(roots)
+
+    Output: 
+    [-0.5, 3]
+    '''
+
+    def rational_roots(self, co_list):
+        # If the coeficient list is empty, raise an exception.
+        if len(co_list) == 0:
+            raise Exception("Coefficient can not be empty.")
+
+        aN = co_list[0] # aN is the leading coefficient, hence the first element in co_list.
+        a0 = co_list[-1] # a0 is the constant, hence the last element in co_list.
+        aN_factors = [] # List for aN's factors.
+        a0_factors = [] # List for a0's factors.
+        possible_solutions = [] # Possible solutions.
+        solutions = [] # Real solution(s)/root(s).
+
+        # Check if the leading coefficient or the constant term is zero. If so, raise an exception.
+        if a0 == 0 or aN == 0:
+            raise Exception("Leading coefficient and/or the constant term can not be zero.")
+
+        # Find the factors of the leading coefficient aN
+        for i in range(1, abs(aN) + 1):
+            if aN % i == 0:
+                aN_factors.append(-i) 
+                aN_factors.append(i)
+        
+        # Find the factors of the constant term a0
+        for i in range(1, abs(a0) + 1):
+            if a0 % i == 0:
+                a0_factors.append(-i)
+                a0_factors.append(i)
+
+        # Add the p/q possible solutions to the possible_solutions list as fractions.
+        for num1 in a0_factors:
+            for num2 in aN_factors:
+                possible_solutions.append(Fraction(num1, num2))
+
+        # Create a possible solution set to avoide duplicates.
+        possible_solution_set = set(possible_solutions)
+
+        # Test the possible solution with the polynomial_calculation function.
+        for i in possible_solution_set:
+            s = self.polynomial_calculation(co_list, i)
+            # If the result is a zero (root), then add it to the solutions list.
+            if s == 0:
+                solutions.append(float(i))
+
+        # Convert the list of solutions to return a single value if the length of the list is one.
+        if len(solutions) == 1:
+            solutions = float(solutions[0]) 
+
+        return solutions
+
 class averages():
     """
     Author: carole luo
