@@ -1,3 +1,84 @@
+from fractions import Fraction
+
+class polynomial():
+    '''
+    Author: Kyler Luo
+    '''
+    def __polynomial_calculation(self, co_list, x):
+        # Degree is one less than the length of the co_list, because of the constant term.
+        degree = len(co_list) - 1
+        # A possible solution.
+        result = 0
+
+        # Assemble the polynomial.
+        for co in co_list:
+            result += co * x ** degree
+            degree -= 1
+
+        return result
+    
+    '''
+    Author: Kyler Luo
+    The rational root theorem uses the leading coefficient and the constant term
+    of a polynomial to determine its rational roots (zeros).
+    P is an integer factor of the constant term a0.
+    Q is an integer factor of the leading coefficient aN.
+
+    Example: 
+    2x**2 - 5x - 3
+    x = polynomial()
+    roots = x.rational_roots([2,-5,-3])
+    print(roots)
+
+    Output: 
+    [-0.5, 3]
+    '''
+
+    def rational_roots(self, co_list):
+        # If the coeficient list is empty, raise an exception.
+        if len(co_list) == 0:
+            raise Exception("Coefficient can not be empty.")
+
+        aN = co_list[0] # aN is the leading coefficient, hence the first element in co_list.
+        a0 = co_list[-1] # a0 is the constant, hence the last element in co_list.
+        aN_factors = [] # List for aN's factors.
+        a0_factors = [] # List for a0's factors.
+        possible_solutions = [] # Possible solutions.
+        solutions = [] # Real solution(s)/root(s).
+
+        # Check if the leading coefficient or the constant term is zero. If so, raise an exception.
+        if a0 == 0 or aN == 0:
+            raise Exception("Leading coefficient and/or the constant term can not be zero.")
+
+        # Find the factors of the leading coefficient aN
+        for i in range(1, abs(aN) + 1):
+            if aN % i == 0:
+                aN_factors.append(-i) 
+                aN_factors.append(i)
+        
+        # Find the factors of the constant term a0
+        for i in range(1, abs(a0) + 1):
+            if a0 % i == 0:
+                a0_factors.append(-i)
+                a0_factors.append(i)
+
+        # Add the p/q possible solutions to the possible_solutions list as fractions.
+        for num1 in a0_factors:
+            for num2 in aN_factors:
+                possible_solutions.append(Fraction(num1, num2))
+
+        # Create a possible solution set to avoide duplicates.
+        possible_solution_set = set(possible_solutions)
+
+        # Test the possible solution with the polynomial_calculation function.
+        for i in possible_solution_set:
+            s = self.__polynomial_calculation(co_list, i)
+            # If the result is a zero (root), then add it to the solutions list.
+            if s == 0:
+                solutions.append(float(i))
+
+        return solutions
+
 class averages():
     """
     Author: carole luo
@@ -43,11 +124,50 @@ class averages():
 
     """
     Mode:
+    Author:Frankie
     Most common term(s)
+    Mode: Most common elements in set.
+    Example:
+    Find the mode in the set below:
+    [1,1,1,1,2,3,4]
+    The mode is 1.
+    Exmaple code:
+    x = averages()
+    y = x.mode([1,1,1,2,3,4,5,6])
+    print(y)
+    output：1
+
     """
     def mode(self, num_list):
-        pass
-
+            num_dict = {} # Empty dictionary for numbers in the num_list and their frequency
+            num_set = set() # Empty set for numbers in num_list to avoide duplicates
+            mode = [0] # List of modes (in case there is more than one mode)
+            most_occurences = [0] # List of largest values (in case there is more than one mode)
+            
+            for num in num_list:
+                num_set.add(num) # Add each number in num_list to the set
+                occurences = 0 # Set the occurences to 0 inside the loop so it reset every to count for each number
+                for x in num_list: # Loop over the num_list again to check occurences
+                    if x == num: 
+                        occurences += 1
+                num_dict[num] = occurences # Add the number and its occurences to the dictionary
+                
+            for key in num_set:
+                if num_dict[key] > most_occurences[0]: # Check if the number is greater than the current largest value
+                    mode.clear() # Clear the mode list if a new largest number is found
+                    mode.append(key) # Add the new largest number to the list
+                    most_occurences.clear() # Clear the most_occurences list if there is a new largest value
+                    most_occurences.append(num_dict[key]) # Add the new largest value
+                
+                elif num_dict[key] == most_occurences[0]: # Check if the number of occurences is equal than the current highest
+                    most_occurences.append(num_dict[key]) # If they are the same then add the number of occurences to the list with the other value
+                    mode.append(key) # Add the number to the list of modes, since it is tied with at least one other number
+            
+            if len(most_occurences) == 1: # If there is only one mode, convert it to an integer instead of a list
+                mode = int(mode[0]) 
+            
+            return mode
+    
     """
     Author: carole luo
     Hamonic Mean:
@@ -246,6 +366,7 @@ class EvenNumberSeries:
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
 
+<<<<<<< HEAD
 
 """
 Author:Andrew
@@ -277,3 +398,84 @@ def combination(n,r):
         raise Exception("r has to be bigger then 0 and smaller then n")
     else:
         return int(factorial(n) / (factorial(r)*factorial(n-r)))
+=======
+"""
+@author: Shaoming
+Calculates the number of subsets of size n and the formula to find it is 2^n
+
+Example:
+if n = [1, 2, 3, 4, 5]
+then we the number of elements in the set, which in this case, is 5.
+Result:
+s = Subsets([1,2,3,4,5])
+a = s.findSubsets()
+print(a)
+Output: 32
+2^n = 2^5 = 32
+Therefore the amount of subsets of size n is 32.
+"""
+class Subsets:
+    """
+    n represents the number of elements in the set.
+    """
+    def __init__(self, n):
+        self.n = n
+    
+    def findSubsets(self):
+        amt = 1
+        for x in range(len(self.n)):
+            amt *= 2
+        return amt 
+    """
+    To find the amount of proper subsets, subtract 1 a = findSubsets([1, 2, 3])-1
+    """
+"""
+@auther: Fred Xu
+Calculates the sum of the first n odd numbers.
+1+3+5... (2n+1)=n²
+
+Example:
+if n = 5
+then we are calculating the sum of the first 5 odd numbers [1, 3, 5, 7, 9]
+
+Result:
+n² = 5² = 25
+Therefore the sum of the first 5 odd numbers is 25.
+"""
+class OddNumberSequence:
+    """ 
+    n is the number of numbers in the odd number sequence.
+    """ 
+    def __init__(self, n):
+
+        self.n = n
+    
+    """
+    Checks if the number given is valid.
+      - the number must be greater or equal to 0
+    """
+    def validat(self):
+        if self.n < 0:
+            raise Exception('The length of the sequence cannot be a negative number.')
+            
+    """
+    Calculates the sum without the formula.
+    """
+    def sumWithoutFormula(self):
+        OddNumberSequence.validat(self)
+        total = 0
+        for i in range(1, self.n+1):
+            total += i*2-1
+        return total
+    
+    """
+    Calculates the sum using the formula n²
+    """
+    def sumWithFormula(self):
+
+        OddNumberSequence.validat(self)
+        
+        return self.n ** 2
+
+
+>>>>>>> origin/main
