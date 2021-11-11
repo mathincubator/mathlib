@@ -7,7 +7,7 @@ class averages():
     Median = middle number
     - If number of terms is even,
     Median = average of middle two numbers
-    Example: numbers = [3,2,5,4,1,0]
+    nuxample: numbers = [3,2,5,4,1,0]
     m = median(numbers)
     print(m)
     Output: 2.5
@@ -45,7 +45,7 @@ class averages():
     Mode:
     Author:Frankie
     Most common term(s)
-    Mode: Most common elements in set.
+    Mode: Most common elements in a set.
     Example:
     Find the mode in the set below:
     [1,1,1,1,2,3,4]
@@ -87,6 +87,72 @@ class averages():
             
             return mode
     
+   
+    
+    """
+Author:Frankie
+Product rule of Integral Exponents
+Definition:
+The product rule allows us to multiply/deal with exponents more easily. 
+The product rule states that the product of 2 exponents with the same base/root is the same as the base/root to the sum of the exponents.
+Formula:
+a^m * a^n = a^m ^+ ^n
+
+Example:
+What is 5² * 5³ ?
+5² * 5³ = 5³+²
+=5⁵ 
+=5*5*5*5*5
+=3125
+
+Code Example:
+x = product_rule(1,1,2,4)
+print(x)
+output:1
+"""
+    
+    def product_rule(self,r1,r2,exp1,exp2):
+        if r1 != r2:
+            return r1**exp1*r2**exp2
+        else: 
+            return r1**(exp1+exp2)    
+        
+
+    """
+author: Frankie
+Quotient Rule of Integral Exponents
+Definition
+The quotient rule of exponents allows us to simplify a problem that divides 2 numbers 
+with the same base but different exponents. 
+Formula:
+a^m ÷ a^n = a^m − ^n
+Example:
+What is 2^4 ÷ 2^7?
+Using the quotient rule, 
+we can simply do
+2^4−^7
+=2^−3
+= 0.125
+Code Example:
+x=quotient_rule(2,2,4,5)
+print(x)
+"""
+    
+    def quotient_rule(r1,r2,exp1,exp2):
+        if r1 != r2:
+            return r1**exp1/r2**exp2
+        else: 
+            return r1**(exp1-exp2)  
+    
+
+    
+    
+    
+
+
+    
+    
+    
     """
     Author: carole luo
     Hamonic Mean:
@@ -112,7 +178,7 @@ class averages():
             return sum        
 
 """
-Author:Andrew
+Author:    
 Arithemetic: An arithmetic sequence is a sequence of numbers
 with the same difference between consecutive terms.
 Parameters:
@@ -315,6 +381,7 @@ class Subsets:
     """
     To find the amount of proper subsets, subtract 1 a = findSubsets([1, 2, 3])-1
     """
+    
 """
 @auther: Fred Xu
 Calculates the sum of the first n odd numbers.
@@ -362,5 +429,7 @@ class OddNumberSequence:
         OddNumberSequence.validat(self)
         
         return self.n ** 2
+    
+
 
 
