@@ -259,18 +259,21 @@ def factorial(n):
         return 1 
     elif n > 1:
         return n * factorial(n-1)
-    elif n <= 0:
+    else:
         raise Exception("Your number has to be bigger or equal to 1")
 
 """
 Author:Andrew
 Combination: A combination is a possible arrangement in a collection of items where the order of the selection does not matter
+Parameters:
+n is the total amount of objects.
+r is the amount of objects you want from n.
 Example: 
 print(combination(6,2)) 
 output:15
 """
 def combination(n,r):
     if n < r  or r < 0:
-        raise Exception("r has to be bigger then 0 and smaller then n")
+        raise Exception("r has to be bigger then 0 and smaller than n")
     else:
         return int(factorial(n) / (factorial(r)*factorial(n-r)))
