@@ -341,7 +341,7 @@ Calculate the sum of n even numbers from 2 to 2n.
 """
 class EvenNumberSeries:
     """
-    n is the number of even elements.
+    n is the number of even elements
     
     """
     def __init__(self, n):
@@ -366,6 +366,39 @@ class EvenNumberSeries:
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
 
+<<<<<<< HEAD
+
+"""
+Author:Andrew
+Factorial: In mathematics, the factorial of a non-negative integer n is written as n! which is the product of all non-negative integers less or equal to n.
+Example: 
+print(factorial(4)) 
+output:24
+"""
+def factorial(n):
+    if n == 1:
+        return 1 
+    elif n > 1:
+        return n * factorial(n-1)
+    else:
+        raise Exception("Your number has to be bigger or equal to 1")
+
+"""
+Author:Andrew
+Combination: A combination is a possible arrangement in a collection of items where the order of the selection does not matter
+Parameters:
+n is the total amount of objects.
+r is the amount of objects you want from n.
+Example: 
+print(combination(6,2)) 
+output:15
+"""
+def combination(n,r):
+    if n < r  or r < 0:
+        raise Exception("r has to be bigger then 0 and smaller then n")
+    else:
+        return int(factorial(n) / (factorial(r)*factorial(n-r)))
+=======
 """
 @author: Shaoming
 Calculates the number of subsets of size n and the formula to find it is 2^n
@@ -445,3 +478,4 @@ class OddNumberSequence:
         return self.n ** 2
 
 
+>>>>>>> origin/main
