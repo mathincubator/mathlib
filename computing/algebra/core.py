@@ -366,7 +366,7 @@ class EvenNumberSeries:
     def sumUsingFormula(self):
         return self.n * ( self.n + 1 ) 
 
-<<<<<<< HEAD
+
 
 """
 Author:Andrew
@@ -398,7 +398,7 @@ def combination(n,r):
         raise Exception("r has to be bigger then 0 and smaller then n")
     else:
         return int(factorial(n) / (factorial(r)*factorial(n-r)))
-=======
+
 """
 @author: Shaoming
 Calculates the number of subsets of size n and the formula to find it is 2^n
@@ -478,4 +478,4 @@ class OddNumberSequence:
         return self.n ** 2
 
 
->>>>>>> origin/main
+
