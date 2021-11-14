@@ -523,8 +523,9 @@ we can simply do
 =2^−3
 = 0.125
 Code Example:
-x=quotient_rule(2,2,4,5)
+x = quotient_rule(11,11,2,4)
 print(x)
+
 """
     
 def quotient_rule(r1,r2,exp1,exp2):
@@ -532,3 +533,6 @@ def quotient_rule(r1,r2,exp1,exp2):
         return r1**exp1/r2**exp2
     else: 
         return r1**(exp1-exp2)
+
+x = quotient_rule(11,11,2,4)
+print(x)
