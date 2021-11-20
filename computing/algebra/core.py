@@ -478,4 +478,25 @@ class OddNumberSequence:
         return self.n ** 2
 
 
+"""
+Author:Allan
+Geometric: A geometric sequence is a sequence of numbers with the same ratio between consecutive terms.
+1,2,4,8,16,32...,1024 is a geometric sequence because there is always a ratio of 2 between consecutive terms.
 
+first number is your first term, second number is your common ratio, third number is how many terms you want it to output  
+sequence(2, 3, 9)
+Output:6, 18, 54, 162, 486, 1458, 4374, 13122, 39366
+"""
+
+
+
+def sequence(num, constant, length):
+    sequence = []
+    x = num
+    for i in range(length):
+        x *= constant
+        sequence.append(x)
+    for i in sequence:
+        print(i)
+
+sequence(2, 3, 9)
