@@ -475,16 +475,36 @@ class OddNumberSequence:
         
         return self.n ** 2
 
-def lcm(x, y):
-    if x == 0 or y == 0:
-        raise Exception("Your number(s) cannot be 0.")
-    if x < 0:
-        x = -x
-    if y < 0:
-        y = -y
-    n = 1
-    while not((n % x == 0) and (n % y == 0)):
-        n += 1  
 
-    return n
-print(lcm(4, 0))
+"""
+Author:Andrew
+LCM: Least common multiple. 
+Calculates the lcm of the numbers you inserted
+
+Example: 
+print(combination(6,2)) 
+output:15
+"""
+
+def lcm(*numbers):
+    if len(numbers) < 2:
+        raise Exception("Not enough numbers to calculate.")
+    numlist = list(numbers)
+    lcm = 1
+    for i in range(len(numlist)):
+        if  numlist[i] == 0:
+            raise Exception("The number(s) cannot be 0")
+        if numlist[i] < 0:
+            numlist[i] = numlist[i] * -1
+        if lcm < numlist[i]:
+            lcm = numlist[i]
+
+    while True:
+        for x in numlist:
+            if lcm % x != 0:
+                lcm += 1
+                break
+        else:
+            return lcm
+
+print(lcm(2,3,4))
