@@ -482,8 +482,8 @@ LCM: Least common multiple.
 Calculates the lcm of the numbers you inserted
 
 Example: 
-print(combination(6,2)) 
-output:15
+print(lcm(4, 2, 3))
+output:12
 """
 
 def lcm(*numbers):
@@ -507,4 +507,3 @@ def lcm(*numbers):
         else:
             return lcm
 
-print(lcm(2,3,4))
