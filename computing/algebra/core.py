@@ -506,7 +506,7 @@ and exp1 and exp2 are the 2 exponents in the calculation
 In the Code example, 1,1 are the roots and 2 and 4 are the exponents.
 """
     
-def product_rule(self,r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
+def product_rule(r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
     #r2 the 2nd root in calculation and exp1 and exp2 are the 2 exponents in the calculation
     if r1 != r2:
         return r1**exp1*r2**exp2 
