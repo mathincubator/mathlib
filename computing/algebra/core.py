@@ -512,8 +512,7 @@ def product_rule(r1,r2,exp1,exp2):### r1 stands for the first root in calculatio
         return r1**exp1*r2**exp2 
     else: 
         return r1**(exp1+exp2)    
-        
-
+                        
 """
 Author: Frankie
 Quotient Rule of Integral Exponents
