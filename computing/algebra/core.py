@@ -498,6 +498,12 @@ Code Example:
 x = product_rule(1,1,2,4)
 print(x)
 output:1
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 1,1 are the roots and 2 and 4 are the exponents.
 """
     
 def product_rule(self,r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
@@ -524,13 +530,18 @@ we can simply do
 =2^−3
 = 0.125
 Code Example:
-x = quotient_rule(11,11,2,4)
+x = quotient_rule(11,11,3,6)
 print(x)
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 11,11 are the roots and 3 and 6 are the exponents.
 
 """
     
-def quotient_rule(r1,r2,exp1,exp2):# r1 stands for the first root in calculation, 
-    #r2 the 2nd root in calculation and exp1 and exp2 are the 2 exponents in the calculation
+def quotient_rule(r1,r2,exp1,exp2):
     if r1 != r2:
         return r1**exp1/r2**exp2
     else: 
@@ -538,3 +549,6 @@ def quotient_rule(r1,r2,exp1,exp2):# r1 stands for the first root in calculation
 
 x = quotient_rule(11,12,2,4)
 print(x)
+
+
+
