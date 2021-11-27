@@ -535,11 +535,13 @@ print(sequence(2,3,9))
 first number is your first term, second number is your common ratio, third number is how many terms you want it to output
 """
 
+class geometrics:
 
-def sequence(num, constant, length):
-    sequence = []
-    x = num
-    for i in range(length):
-        x *= constant
-        sequence.append(x)
-    return sequence 
+    def geometric_sequence(num, constant, length):
+        sequence = []
+        x = num
+        for i in range(length):
+            x *= constant
+            sequence.append(x)
+        return sequence 
+    
