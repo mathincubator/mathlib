@@ -547,8 +547,6 @@ def quotient_rule(r1,r2,exp1,exp2):
     else: 
         return r1**(exp1-exp2)
 
-x = quotient_rule(11,12,2,4)
-print(x)
 
 
 
