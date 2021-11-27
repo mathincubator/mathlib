@@ -525,3 +525,23 @@ class Primes:
             return True
 
 
+"""
+Author:Allan
+Geometric: A geometric sequence is a sequence of numbers with the same ratio between consecutive terms.
+1,2,4,8,16,32...,1024 is a geometric sequence because there is always a ratio of 2 between consecutive terms.
+
+Example:
+print(sequence(2,3,9))
+first number is your first term, second number is your common ratio, third number is how many terms you want it to output
+"""
+
+class geometrics:
+
+    def geometric_sequence(num, constant, length):
+        sequence = []
+        x = num
+        for i in range(length):
+            x *= constant
+            sequence.append(x)
+        return sequence 
+    
