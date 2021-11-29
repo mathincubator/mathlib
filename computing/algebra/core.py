@@ -546,7 +546,3 @@ def quotient_rule(r1,r2,exp1,exp2):
         return r1**exp1/r2**exp2
     else: 
         return r1**(exp1-exp2)
-
-
-
-
