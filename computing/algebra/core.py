@@ -376,7 +376,7 @@ print(factorial(4))
 output:24
 """
 def factorial(n):
-    if n == 1:
+    if n == 1 or n == 0:
         return 1 
     elif n > 1:
         return n * factorial(n-1)
@@ -523,5 +523,59 @@ class Primes:
                 if self.n % 2 == 0:
                     return False
             return True
+        
+"""
+Author:Bryan
+Permutation: A arrangment of objects in a set.
+But, the order does matter.
+
+Parameters:
+n=amount of total objects
+r=amount of chosen objects
+Example:
+
+print(permutation(5,4))
+output:120
+"""
+
+def permutation(n, r, rep=False):
+    if n < r or r < 0:
+        raise Exception("Invalid parameters")
+    elif rep == True:
+        return n**r
+    else:
+        return factorial(n)/factorial(n-r)
+
+
+"""
+Author:Bryan
+GCD: Long word is Greatest Common Divisor. 
+Also known as GCF. It is the biggest factor of the factors in both numbers. 
+Example: GCF of 5 and 25. 
+Factors of 5: 1, 5 
+Factors of 25: 1, 5, 25
+Common factors : 1, 5   GCF: 5
+
+Code Example: print(GCD(8,24,36))
+Output: 2
+"""
+
+
+def GCD(*numbers):
+    gcf = abs(numbers[0])
+    for num in numbers:
+        if num == 0:
+            raise Exception("Your number cannot be 0")
+        if  gcf > abs(num):
+            gcf = abs(num)
+    while gcf >= 1:
+        for num in numbers:
+            if num % gcf != 0:
+                #gcf = gcf-1
+                break 
+        else:
+            return gcf
+        gcf = gcf-1
+    
 
 
