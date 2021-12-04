@@ -489,15 +489,15 @@ output:12
 def lcm(*numbers):
     if len(numbers) < 2:
         raise Exception("Not enough numbers to calculate.")
-    numlist = list(numbers)
     lcm = 1
-    for i in range(len(numlist)):
-        if  numlist[i] == 0:
+    for i in range(len(numbers)):
+        if  numbers[i] == 0:
             raise Exception("The number(s) cannot be 0")
-        if lcm < abs(numlist[i]):
-            lcm = abs(numlist[i])
+        if lcm < abs(numbers[i]):
+            lcm = abs(numbers[i])
+            
     while True:
-        for x in numlist:
+        for x in numbers:
 
             if lcm % x != 0:
                 lcm += 1
@@ -505,4 +505,4 @@ def lcm(*numbers):
         else:
             return lcm  
 
-print(lcm(-4, 0, -3))
+print(lcm(-4, 2, -3))
