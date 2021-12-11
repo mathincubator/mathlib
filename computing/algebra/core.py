@@ -498,11 +498,9 @@ def lcm(*numbers):
             
     while True:
         for x in numbers:
-
             if lcm % x != 0:
                 lcm += 1
                 break
         else:
             return lcm  
 
-print(lcm(-4, 2, -3))
