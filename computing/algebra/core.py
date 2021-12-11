@@ -524,4 +524,70 @@ class Primes:
                     return False
             return True
 
+"""
+Author:Frankie
+Product rule of Integral Exponents
+Definition:
+The product rule allows us to multiply/deal with exponents more easily. 
+The product rule states that the product of 2 exponents with the same base/root is the same as the base/root to the sum of the exponents.
+Formula:
+a^m * a^n = a^m ^+ ^n
 
+Example:
+What is 5² * 5³ ?
+5² * 5³ = 5³+²
+=5⁵ 
+=5*5*5*5*5
+=3125
+
+Code Example:
+x = product_rule(1,1,2,4)
+print(x)
+output:1
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 1,1 are the roots and 2 and 4 are the exponents.
+"""
+    
+def product_rule(r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
+    #r2 the 2nd root in calculation and exp1 and exp2 are the 2 exponents in the calculation
+    if r1 != r2:
+        return r1**exp1*r2**exp2 
+    else: 
+        return r1**(exp1+exp2)    
+                        
+"""
+Author: Frankie
+Quotient Rule of Integral Exponents
+Definition:
+The quotient rule of exponents allows us to simplify a problem that divides 2 numbers 
+with the same base but different exponents. 
+Formula:
+a^m ÷ a^n = a^m − ^n
+Example:
+What is 2^4 ÷ 2^7?
+Using the quotient rule, 
+we can simply do
+2^4−^7
+=2^−3
+= 0.125
+Code Example:
+x = quotient_rule(11,11,3,6)
+print(x)
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 11,11 are the roots and 3 and 6 are the exponents.
+
+"""
+    
+def quotient_rule(r1,r2,exp1,exp2):
+    if r1 != r2:
+        return r1**exp1/r2**exp2
+    else: 
+        return r1**(exp1-exp2)
