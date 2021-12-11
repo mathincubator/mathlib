@@ -475,6 +475,52 @@ class OddNumberSequence:
         
         return self.n ** 2
 
+"""
+Author: Shaoming
+Primes:
+Prime numbers are numbers that has 2 factors and can only be divisible by 1 and itself.
+For example, 7 is a prime number because its factors are only 1 and itself.
+27 is not a prime number because it's factors are 1, 3, 9, 27.
+1 is also not a prime number because its only factor is 1.
+
+Prime Factorization:
+Prime Factorization is the process of decomposing a non-prime (composite) number until it becomes a prime number.
+Example: 27: 27/3 = 9, 9/3 = 3. Prime factors are 3, 3, 3. It can also be written as 3^3.
+
+Example Code:
+a = Primes(27)
+print(a.primeFactorization()) 
+prints the list: [3, 3, 3]
+print(a.checkPrime())
+prints False (because 27 isn't prime)
+
+"""
+class Primes:
+    def __init__(self, n):
+        self.n = n
+    
+    def primeFactorization(self): # Function for prime factorization
+        list = []
+        y = self.n
+        x = 2
+        for i in range(2, int(self.n)): # Loop for prime factorization
+            while y%x == 0: # Adds factor to list if self.n%x = 0. Continues until it isn't then add 1 to x and repeat.
+                list.append(x)
+                y /= x
+            x += 1
+        if len(list) == 0:
+            list.append(1)
+            list.append(self.n)
+        return list
+
+    def checkPrime(self): # Function for checking primes
+        if self.n == 1 or self.n == 0 or (self.n % 2 == 0 and self.n > 2): # Checks if a is greater than 1, not even, and not 2.
+            return False
+        else: 
+            for i in range(3, int(self.n**(1/2))): # Dividing by 3 and then progressively adding one until equal to self.n. 
+                if self.n % 2 == 0:
+                    return False
+            return True
 
 """
 Author:Andrew
@@ -502,5 +548,72 @@ def lcm(*numbers):
                 lcm += 1
                 break
         else:
-            return lcm  
+            return lcm
 
+"""
+Author:Frankie
+Product rule of Integral Exponents
+Definition:
+The product rule allows us to multiply/deal with exponents more easily. 
+The product rule states that the product of 2 exponents with the same base/root is the same as the base/root to the sum of the exponents.
+Formula:
+a^m * a^n = a^m ^+ ^n
+
+Example:
+What is 5² * 5³ ?
+5² * 5³ = 5³+²
+=5⁵ 
+=5*5*5*5*5
+=3125
+
+Code Example:
+x = product_rule(1,1,2,4)
+print(x)
+output:1
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 1,1 are the roots and 2 and 4 are the exponents.
+"""
+    
+def product_rule(r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
+    #r2 the 2nd root in calculation and exp1 and exp2 are the 2 exponents in the calculation
+    if r1 != r2:
+        return r1**exp1*r2**exp2 
+    else: 
+        return r1**(exp1+exp2)    
+                        
+"""
+Author: Frankie
+Quotient Rule of Integral Exponents
+Definition:
+The quotient rule of exponents allows us to simplify a problem that divides 2 numbers 
+with the same base but different exponents. 
+Formula:
+a^m ÷ a^n = a^m − ^n
+Example:
+What is 2^4 ÷ 2^7?
+Using the quotient rule, 
+we can simply do
+2^4−^7
+=2^−3
+= 0.125
+Code Example:
+x = quotient_rule(11,11,3,6)
+print(x)
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 11,11 are the roots and 3 and 6 are the exponents.
+
+"""
+    
+def quotient_rule(r1,r2,exp1,exp2):
+    if r1 != r2:
+        return r1**exp1/r2**exp2
+    else: 
+        return r1**(exp1-exp2)
