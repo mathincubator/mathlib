@@ -571,11 +571,10 @@ def GCD(*numbers):
     while gcf >= 1:
         for num in numbers:
             if num % gcf != 0:
-                #gcf = gcf-1
                 break 
         else:
             return gcf
         gcf = gcf-1
     
 
-
+print(GCD(8,24,36))
