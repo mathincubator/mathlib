@@ -492,7 +492,7 @@ def lcm(*numbers):
     lcm = 1
     for i in range(len(numbers)):
         if  numbers[i] == 0:
-            raise Exception("The number(s) cannot be 0")
+            raise Exception("The number cannot be 0")
         if lcm < abs(numbers[i]):
             lcm = abs(numbers[i])
             
