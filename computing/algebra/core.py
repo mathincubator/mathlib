@@ -367,7 +367,6 @@ class EvenNumberSeries:
         return self.n * ( self.n + 1 ) 
 
 
-
 """
 Author:Andrew
 Factorial: In mathematics, the factorial of a non-negative integer n is written as n! which is the product of all non-negative integers less or equal to n.
@@ -398,7 +397,6 @@ def combination(n,r):
         raise Exception("r has to be bigger then 0 and smaller then n")
     else:
         return int(factorial(n) / (factorial(r)*factorial(n-r)))
-
 """
 @author: Shaoming
 Calculates the number of subsets of size n and the formula to find it is 2^n
@@ -523,6 +521,34 @@ class Primes:
                 if self.n % 2 == 0:
                     return False
             return True
+
+"""
+Author:Andrew
+LCM: Least common multiple. 
+Calculates the lcm of the numbers you inserted
+
+Example: 
+print(lcm(4, 2, 3))
+output:12
+"""
+
+def lcm(*numbers):
+    if len(numbers) < 2:
+        raise Exception("Not enough numbers to calculate.")
+    lcm = 1
+    for i in range(len(numbers)):
+        if  numbers[i] == 0:
+            raise Exception("The number cannot be 0")
+        if lcm < abs(numbers[i]):
+            lcm = abs(numbers[i])
+            
+    while True:
+        for x in numbers:
+            if lcm % x != 0:
+                lcm += 1
+                break
+        else:
+            return lcm
 
 """
 Author:Frankie
