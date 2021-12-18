@@ -367,7 +367,6 @@ class EvenNumberSeries:
         return self.n * ( self.n + 1 ) 
 
 
-
 """
 Author:Andrew
 Factorial: In mathematics, the factorial of a non-negative integer n is written as n! which is the product of all non-negative integers less or equal to n.
@@ -398,7 +397,6 @@ def combination(n,r):
         raise Exception("r has to be bigger then 0 and smaller then n")
     else:
         return int(factorial(n) / (factorial(r)*factorial(n-r)))
-
 """
 @author: Shaoming
 Calculates the number of subsets of size n and the formula to find it is 2^n
@@ -495,7 +493,6 @@ print(a.primeFactorization())
 prints the list: [3, 3, 3]
 print(a.checkPrime())
 prints False (because 27 isn't prime)
-
 """
 class Primes:
     def __init__(self, n):
@@ -546,7 +543,6 @@ def permutation(n, r, rep=False):
     else:
         return factorial(n)/factorial(n-r)
 
-
 """
 Author:Bryan
 GCD: Long word is Greatest Common Divisor. 
@@ -559,8 +555,6 @@ Common factors : 1, 5   GCF: 5
 Code Example: print(GCD(8,24,36))
 Output: 4
 """
-
-
 def GCD(*numbers):
     gcf = abs(numbers[0])
     for num in numbers:
@@ -575,5 +569,95 @@ def GCD(*numbers):
         else:
             return gcf
         gcf = gcf-1 
-    
 
+"""
+Author:Andrew
+LCM: Least common multiple. 
+Calculates the lcm of the numbers you inserted
+
+Example: 
+print(lcm(4, 2, 3))
+output:12
+"""
+def lcm(*numbers):
+    if len(numbers) < 2:
+        raise Exception("Not enough numbers to calculate.")
+    lcm = 1
+    for i in range(len(numbers)):
+        if  numbers[i] == 0:
+            raise Exception("The number cannot be 0")
+        if lcm < abs(numbers[i]):
+            lcm = abs(numbers[i])
+            
+    while True:
+        for x in numbers:
+            if lcm % x != 0:
+                lcm += 1
+                break
+        else:
+            return lcm
+
+"""
+Author:Frankie
+Product rule of Integral Exponents
+Definition:
+The product rule allows us to multiply/deal with exponents more easily. 
+The product rule states that the product of 2 exponents with the same base/root is the same as the base/root to the sum of the exponents.
+Formula:
+a^m * a^n = a^m ^+ ^n
+
+Example:
+What is 5² * 5³ ?
+5² * 5³ = 5³+²
+=5⁵ 
+=5*5*5*5*5
+=3125
+
+Code Example:
+x = product_rule(1,1,2,4)
+print(x)
+output:1
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 1,1 are the roots and 2 and 4 are the exponents.
+"""
+def product_rule(r1,r2,exp1,exp2):### r1 stands for the first root in calculation, 
+    #r2 the 2nd root in calculation and exp1 and exp2 are the 2 exponents in the calculation
+    if r1 != r2:
+        return r1**exp1*r2**exp2 
+    else: 
+        return r1**(exp1+exp2)    
+                        
+"""
+Author: Frankie
+Quotient Rule of Integral Exponents
+Definition:
+The quotient rule of exponents allows us to simplify a problem that divides 2 numbers 
+with the same base but different exponents. 
+Formula:
+a^m ÷ a^n = a^m − ^n
+Example:
+What is 2^4 ÷ 2^7?
+Using the quotient rule, 
+we can simply do
+2^4−^7
+=2^−3
+= 0.125
+Code Example:
+x = quotient_rule(11,11,3,6)
+print(x)
+
+r1 stands for the first root in calculation, 
+r2 is the 2nd root in calculation 
+and exp1 and exp2 are the 2 exponents in the calculation
+
+In the Code example, 11,11 are the roots and 3 and 6 are the exponents.
+"""
+def quotient_rule(r1,r2,exp1,exp2):
+    if r1 != r2:
+        return r1**exp1/r2**exp2
+    else: 
+        return r1**(exp1-exp2)
