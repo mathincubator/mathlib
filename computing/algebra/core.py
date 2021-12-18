@@ -557,7 +557,7 @@ Factors of 25: 1, 5, 25
 Common factors : 1, 5   GCF: 5
 
 Code Example: print(GCD(8,24,36))
-Output: 2
+Output: 4
 """
 
 
@@ -574,7 +574,6 @@ def GCD(*numbers):
                 break 
         else:
             return gcf
-        gcf = gcf-1
+        gcf = gcf-1 
     
 
-print(GCD(8,24,36))
